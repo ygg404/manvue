@@ -5,9 +5,11 @@
   window.SITE_CONFIG = {};
 
   // api接口请求地址
-  window.SITE_CONFIG['baseUrl'] = 'http://localhost:19003/mansys';
+  window.SITE_CONFIG['baseUrl'] = 'http://localhost:19003/mansys/webapi';
   // 文件地址
   window.SITE_CONFIG['uploadUrl'] = 'http://localhost:19003/uploadFile/';
+  // 后台ip
+  window.SITE_CONFIG['server'] = 'http://47.112.198.18/';
 
   // cdn地址 = 域名 + 版本号
   window.SITE_CONFIG['domain']  = './'; // 域名

@@ -1,7 +1,7 @@
 import gdetail from '@/views/h5/gdetail'
 import h5index from '@/views/h5/index'
 
-export function getRouterList() {
+export function getRouterList () {
   return [
     {
       path: '/',
