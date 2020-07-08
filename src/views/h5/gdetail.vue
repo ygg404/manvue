@@ -4,11 +4,11 @@
     <div class="mod-content">
       <el-row :gutter="10" style="padding: 10px;">
         <el-col :xs="24" :sm="12">
-          <div></div>
+          <div style="color: #3a8ee6;">演示效果如下：</div>
           <iframe :src="gameSrc" style="width: 100%;min-height:550px;"></iframe>
         </el-col>
         <el-col :xs="24" :sm="12">
-          <div style="color: #3a8ee6">{{item.size}}M</div>
+          大小：<div style="color: #3a8ee6">{{item.size}}M</div>
           <el-button type="primary" size="large"></el-button>
         </el-col>
       </el-row>
