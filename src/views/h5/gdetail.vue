@@ -2,7 +2,7 @@
   <div class="mod-index">
     <header-com ref="HeaderCom" ></header-com>
     <div class="mod-content">
-      <el-row :gutter="10" style="padding: 10px;">
+      <el-row :gutter="10" style="padding: 10px;" >
         <el-col :xs="24" :sm="12">
           <div style="color: #3a8ee6;font-size: 20pt;">演示效果如下：</div>
           <iframe :src="gameSrc" style="width: 100%;min-height:650px;"></iframe>
@@ -14,7 +14,6 @@
           <el-button type="primary" size="large" @click="downLoadCode()">下载源代码</el-button>
         </el-col>
       </el-row>
-
     </div>
     <footer-com ref="FooterCom"></footer-com>
   </div>
@@ -72,8 +71,8 @@
             if (data.htmlPart.cate.indexOf('微信小程序') >= 0) {
               this.gameSrc = this.serverUrl + '/h5not'
             }
-            this.title = data.htmlPart.title + (this.cate === '游戏' ? ' H5小游戏' : '')
-            this.keywords = 'web前端素材下载,前端开发,前端源代码免费下载,HTML源代码'
+            this.title = data.htmlPart.keys
+            this.keywords = data.htmlPart.keys + 'web前端素材下载,前端开发,前端源代码免费下载,HTML源代码'
           }
         })
       },

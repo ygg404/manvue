@@ -5,7 +5,7 @@
           <i class="el-icon-s-fold content_icon" @click="drawerHandle"></i>
           <i class="el-icon-search content_icon" @click="searchHandle"></i>
         </el-col>
-        <el-col  :xs="17" :sm="8" :md="7" style="display:flex;">
+        <el-col  :xs="17" :sm="8" :md="7" style="display:flex;cursor: pointer;" >
           <img src="~@/assets/html/html.png"  class="header_img"/>
           <div class="header_title">Web前端开发</div>
         </el-col>

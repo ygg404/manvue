@@ -13,7 +13,9 @@
                 <div class="title">
                   {{item.title}}
                 </div>
-                <img :src="serverUrl + (item.imgUrl == null ? (  item.title + '/icon.png'): item.imgUrl)" />
+                <img :src="serverUrl + (item.imgUrl == null ? (  item.title + '/icon.png'): item.imgUrl)"
+                     onerror="javascript:this.src='http://img4.jiwu.com/buildpic/52/2796/2796996_m.jpg'"
+                />
                 <div class="btn_line">
                   <el-button type="primary"  @click="openDetailHandle(item)">查看演示</el-button>
 <!--                  <el-button type="success" size="small">下载</el-button>-->
