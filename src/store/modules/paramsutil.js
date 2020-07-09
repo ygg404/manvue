@@ -2,7 +2,8 @@ export default {
   namespaced: true,
   state: {
     argsPageIndex: '',
-    argsPageSize: ''
+    argsPageSize: '',
+    argsCate: ''
   },
   mutations: {
     updateargsPageIndex (state, args) {
@@ -10,6 +11,9 @@ export default {
     },
     updateargsPageSize (state, args) {
       state.argsPageSize = args
+    },
+    updateargsCate (state, args) {
+      state.argsCate = args
     }
   }
 }

@@ -24,26 +24,17 @@
       </el-row>
 
       <el-drawer :visible.sync="drawer" direction="ltr" :with-header="false" size="50%">
-        <div style="background-color: #19678e;height: 100%;text-align: left">
-          <el-menu
-            default-active="1"
-            class="el-menu-vertical-demo">
-            <el-menu-item index="2">
-              <i class="el-icon-menu"></i>
-              <span slot="title">导航二</span>
-            </el-menu-item>
-            <el-menu-item index="3">
-              <i class="el-icon-menu"></i>
-              <span slot="title">导航二</span>
-            </el-menu-item>
-          </el-menu>
-        </div>
+        <nav-com ref="navCom" @refreshData="menuHandle"></nav-com>
       </el-drawer>
 
     </div>
 </template>
 
 <script>
+  import * as tab from './tab'
+  import {stringIsNull} from "../../../utils";
+  import navCom from "./nav_com";
+
   export default {
     data () {
       return {
@@ -52,7 +43,20 @@
         title: '',
         description: '',
         keywords: '',
+        menuList: tab.menuList
       }
+    },
+    computed: {
+      argsCate: {
+        get () { return this.$store.state.paramsutil.argsCate },
+        set (val) { this.$store.commit('paramsutil/updateargsCate', val) }
+      }
+    },
+    components: {
+      navCom
+    },
+    mounted () {
+      if (!stringIsNull(this.$route.query.cate)) this.argsCate = this.$route.query.cate
     },
     methods: {
       searchHandle () {
@@ -62,8 +66,13 @@
           this.$refs.searchItem.$el.style.display = 'block'
         }
       },
+      menuHandle (index) {
+        this.$emit('refreshData',index)
+        this.drawer = false
+      },
       drawerHandle () {
         this.drawer = true
+        if (!stringIsNull(this.$route.query.cate)) this.defaultIndex = this.$route.query.cate
       }
     }
   }
