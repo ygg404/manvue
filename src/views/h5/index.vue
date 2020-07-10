@@ -14,7 +14,7 @@
                   {{item.title}}
                 </div>
                 <img :src="serverUrl + (item.imgUrl == null ? (  item.title + '/icon.png'): item.imgUrl)"
-                     onerror="javascript:this.src='http://img4.jiwu.com/buildpic/52/2796/2796996_m.jpg'"
+                     onerror="javascript:this.src='http://47.112.198.18/uploadFile/gameImg/not.jpg'"
                 />
                 <div class="btn_line">
                   <el-button type="primary"  @click="openDetailHandle(item)">查看演示</el-button>

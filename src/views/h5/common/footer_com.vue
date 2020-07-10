@@ -1,7 +1,7 @@
 <template>
     <div class="mod-footer">
       <div class="footer_line">Copyright © 2020 yggnb.cn All rights reserved.</div>
-      <div class="footer_line"><a href="http://www.beian.miit.gov.cn">粤ICP备19096985号</a></div>
+      <div class="footer_line"><a href="http://www.beian.miit.gov.cn">粤ICP备20059800号</a></div>
     </div>
 </template>
 

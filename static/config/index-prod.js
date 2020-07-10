@@ -5,9 +5,11 @@
   window.SITE_CONFIG = {};
 
   // api接口请求地址
-  window.SITE_CONFIG['baseUrl'] = 'https://www.yggnb.cn/mansys';
+  window.SITE_CONFIG['baseUrl'] = 'http://www.yggnb.cn/mansys/webapi';
   // 文件地址
-  window.SITE_CONFIG['uploadUrl'] = 'https://www.yggnb.cn/uploadFile/';
+  window.SITE_CONFIG['uploadUrl'] = 'http://www.yggnb.cn/uploadFile/';
+// 后台ip
+  window.SITE_CONFIG['server'] = 'http://game.yggnb.cn/';
 
   // cdn地址 = 域名 + 版本号
   window.SITE_CONFIG['domain']  = './'; // 域名
