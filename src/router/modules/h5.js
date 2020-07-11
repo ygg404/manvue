@@ -1,5 +1,6 @@
 import gdetail from '@/views/h5/gdetail'
 import h5index from '@/views/h5/index'
+import search from '@/views/h5/search'
 
 export function getRouterList () {
   return [
@@ -18,6 +19,10 @@ export function getRouterList () {
       name: 'gdetail',
       component: gdetail
     },
-
+    {
+      path: '/search',
+      name: 'search',
+      component: search
+    }
   ]
 }

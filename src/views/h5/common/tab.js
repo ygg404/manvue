@@ -7,6 +7,10 @@ export const menuList = [{
   index: '抽奖',
   children: []
 },{
+  name: 'H5特效合集',
+  index: '特效',
+  children: []
+},{
   name: '微信小程序商城',
   index: '微信小程序商城',
   children:[{

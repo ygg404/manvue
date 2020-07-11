@@ -1,6 +1,6 @@
 <template>
   <div class="mod-index">
-    <header-com ref="HeaderCom" ></header-com>
+    <header-com ref="HeaderCom" @refreshData="gotoHome"></header-com>
     <div class="mod-content">
       <el-row :gutter="10" style="padding: 10px;" >
         <el-col :xs="24" :sm="12">
@@ -50,6 +50,12 @@
         ]
       }
     },
+    computed: {
+      argsCate: {
+        get () { return this.$store.state.paramsutil.argsCate },
+        set (val) { this.$store.commit('paramsutil/updateargsCate', val) }
+      }
+    },
     created () {
       this.init()
     },
@@ -80,6 +86,9 @@
       downLoadCode () {
         console.log( this.serverUrl + this.item.downloadUrl)
         window.location.href = this.serverUrl + this.item.downloadUrl
+      },
+      gotoHome () {
+        this.$router.push({path: '/' })
       }
     }
   }

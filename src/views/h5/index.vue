@@ -7,6 +7,7 @@
           <nav-com ref="NavCom" @refreshData="getDateList"></nav-com>
         </el-col>
         <el-col :xs="24" :sm="18" v-loading="dataListLoading" >
+          <div v-if="!stringIsNull(search)" style="color: #3a8ee6;font-size: 12pt;padding: 4px"> 搜索结果：</div>
           <el-row :gutter="6" style="min-height: 850px;">
             <el-col :xs="12" :sm="6" v-for="item in dataList" :key="item.id" style="padding: 5px;">
               <el-card class="mod_card" >
@@ -65,6 +66,7 @@
         pageSize: 20,
         totalPage: 0,
         totalCount: 0,
+        search: '',
         pageList: '',
         dataListLoading: false,
         serverUrl: window.SITE_CONFIG.server
@@ -95,7 +97,7 @@
     },
     methods: {
       init() {
-        this.title = "web前端开发 前端源代码免费下载"
+        this.title = 'YGG软件技术网--Html5前端源代码下载'
         this.keywords = 'web前端素材下载,前端开发,前端源代码免费下载,HTML源代码'
         this.argsCate = stringIsNull(this.$route.query.cate) ? '游戏' : this.$route.query.cate
         this.getHtmlList(this.argsCate)
@@ -105,21 +107,23 @@
         this.pageIndex = val
         this.getHtmlList(this.argsCate)
       },
-      getDateList (cate) {
+      getDateList (cate,search) {
         this.pageIndex = 1
         this.argsCate = cate
+        this.search = stringIsNull(search)? '' : search
         this.$router.push({path: '/h5index', query: {'cate': cate}})
         this.getHtmlList(cate)
       },
       getHtmlList (cate) {
-        if (stringIsNull(cate)) {
-          cate = stringIsNull(this.$route.query.cate) ? '游戏' : this.$route.query.cate
-        }
+        // if (stringIsNull(cate)) {
+        //   cate = stringIsNull(this.$route.query.cate) ? '游戏' : this.$route.query.cate
+        // }
         this.dataListLoading = true
         this.$http({
           url: this.$http.adornUrl('/html/h5page'),
           method: 'get',
           params: this.$http.adornParams({
+            'key': this.search,
             'page': this.pageIndex,
             'limit': this.pageSize,
             'cate': cate

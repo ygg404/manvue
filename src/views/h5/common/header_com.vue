@@ -3,23 +3,24 @@
       <el-row :gutter="10" class="header">
         <el-col :xs="7" class="hidden-sm-and-up">
           <i class="el-icon-s-fold content_icon" @click="drawerHandle"></i>
-          <i class="el-icon-search content_icon" @click="searchHandle"></i>
+          <i class="el-icon-search content_icon" @click="searchOutHandle"></i>
         </el-col>
         <el-col  :xs="17" :sm="8" :md="7" style="display:flex;cursor: pointer;" >
-          <img src="~@/assets/html/html.png"  class="header_img"/>
+
+          <img src="~@/assets/html/html.png"  class="header_img" @click="gotoIndex"/>
           <div class="header_title">Web前端开发</div>
         </el-col>
         <el-col  :sm="12" :md="10" class="hidden-xs-only">
           <el-input v-model="search" style="padding:8px;width: 300px" placeholder="关键字"></el-input>
-          <el-button type="primary" style="margin-left: -13px;" >搜索</el-button>
+          <el-button type="primary" style="margin-left: -13px;" @click="searchHandle">搜索</el-button>
         </el-col>
       </el-row>
       <el-row class="hidden-sm-and-up header mobile_search" ref="searchItem">
         <el-col :span="18">
           <el-input v-model="search" placeholder="关键字"></el-input>
         </el-col>
-        <el-col :span="6">
-          <el-button type="primary">搜索</el-button>
+        <el-col :span="5">
+          <el-button type="primary"  @click="searchHandle">搜索</el-button>
         </el-col>
       </el-row>
 
@@ -59,7 +60,7 @@
       if (!stringIsNull(this.$route.query.cate)) this.argsCate = this.$route.query.cate
     },
     methods: {
-      searchHandle () {
+      searchOutHandle () {
         if (this.$refs.searchItem.$el.style.display === 'block'){
           this.$refs.searchItem.$el.style.display = 'none'
         } else {
@@ -73,6 +74,13 @@
       drawerHandle () {
         this.drawer = true
         if (!stringIsNull(this.$route.query.cate)) this.defaultIndex = this.$route.query.cate
+      },
+      gotoIndex () {
+        this.$router.push({path: '/'})
+      },
+      // 关键字搜索
+      searchHandle () {
+        this.$emit('refreshData','', this.search)
       }
     }
   }
