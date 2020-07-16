@@ -98,7 +98,8 @@
     methods: {
       init() {
         this.title = 'YGG软件技术网--Html5前端源代码下载'
-        this.keywords = 'web前端素材下载,前端开发,前端源代码免费下载,HTML源代码'
+        this.description = '本网站提供HTML5源代码,前端源代码,H5小游戏源代码,H5抽奖,H5特效等源代码的演示和下载--YGG软件技术网'
+        this.keywords = 'HTML5源代码,前端源代码,H5小游戏源代码,H5抽奖源代码,H5特效源代码,前端源代码免费下载,HTML5源代码,微信小程序源代码'
         this.argsCate = stringIsNull(this.$route.query.cate) ? '游戏' : this.$route.query.cate
         this.getHtmlList(this.argsCate)
       },

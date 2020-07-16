@@ -3,12 +3,13 @@
     <header-com ref="HeaderCom" @refreshData="gotoHome"></header-com>
     <div class="mod-content">
       <el-row :gutter="10" style="padding: 10px;" >
-        <el-col :xs="24" :sm="12">
+        <el-col :xs="24" :sm="item.isMobile === 1?12: 16">
           <div style="color: #3a8ee6;font-size: 20pt;">演示效果如下：</div>
           <iframe :src="gameSrc" style="width: 100%;min-height:650px;"></iframe>
         </el-col>
-        <el-col :xs="24" :sm="12">
+        <el-col :xs="24" :sm="item.isMobile === 1?12: 8">
           <div class="game_title"><span style="color: black;">标题：</span>{{item.title}}</div>
+          <div class="game_description" v-if="item.description !== null">描述：{{item.description}}</div>
           <img src="~@/assets/html/zip.jpg" style="width: 100px;"/>
           <div style="font-size: 13pt;">大小： <span style="color: #3a8ee6">{{item.size}}</span>M</div>
           <el-button type="primary" size="large" @click="downLoadCode()">下载源代码</el-button>
@@ -110,5 +111,9 @@
     padding: 10px;
     font-size: 18pt;
     color: #3a8ee6;
+  }
+  .game_description{
+    text-align: left;
+    color: #6f7180;
   }
 </style>

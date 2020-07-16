@@ -6,9 +6,8 @@
           <i class="el-icon-search content_icon" @click="searchOutHandle"></i>
         </el-col>
         <el-col  :xs="17" :sm="8" :md="7" style="display:flex;cursor: pointer;" >
-
           <img src="~@/assets/html/html.png"  class="header_img" @click="gotoIndex"/>
-          <div class="header_title">Web前端开发</div>
+          <div class="header_title">前端源代码</div>
         </el-col>
         <el-col  :sm="12" :md="10" class="hidden-xs-only">
           <el-input v-model="search" style="padding:8px;width: 300px" placeholder="关键字"></el-input>

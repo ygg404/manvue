@@ -11,6 +11,10 @@ export const menuList = [{
   index: '特效',
   children: []
 },{
+  name: 'H5 SVG合集',
+  index: 'SVG',
+  children: []
+},{
   name: '微信小程序商城',
   index: '微信小程序商城',
   children:[{
