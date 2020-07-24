@@ -12,7 +12,10 @@ import {isAuth, getUUID,stringIsNull} from '@/utils'
 import 'element-ui/lib/theme-chalk/index.css'
 import 'element-ui/lib/theme-chalk/display.css'
 import Meta from 'vue-meta'
+import VueHighlightJS from 'vue-highlightjs'
+import 'highlight.js/styles/atom-one-dark.css'
 
+Vue.use(VueHighlightJS)
 Vue.use(Meta)
 Vue.use(VueCookie)
 Vue.config.productionTip = false

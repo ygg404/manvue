@@ -3,7 +3,8 @@ export default {
   state: {
     argsPageIndex: '',
     argsPageSize: '',
-    argsCate: ''
+    argsCate: '',
+    argsId: ''
   },
   mutations: {
     updateargsPageIndex (state, args) {
@@ -14,6 +15,9 @@ export default {
     },
     updateargsCate (state, args) {
       state.argsCate = args
+    },
+    updateargsId (state, args) {
+      state.argsId = args
     }
   }
 }
